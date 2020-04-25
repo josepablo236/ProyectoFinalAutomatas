@@ -1,0 +1,4 @@
+Program x 
+55hola :=b 
+type c=d 
+const a =

@@ -1,0 +1,59 @@
+﻿
+@model AnalizadorDeLexico.Models.AutomataViewModel
+@{
+    ViewBag.Title = "Automata";
+}
+<h2>Automata</h2>
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var item in Model.NoTerminales)
+            {
+                <th>
+                    @Html.DisplayFor(modelItem => item)
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.NoTerminalesConjunto)
+        {
+            <tr>
+                @foreach (var i in item)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => i)
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<table class="table">
+            <tbody>
+                <th>
+                    Estados
+                </th>
+                @foreach (var item in Model.Conjuntos)
+                {
+<td>
+            @Html.DisplayFor(modelItem => item)
+        </td>
+        }
+
+<tr>
+    <th>
+        Estados Aceptacion
+    </th>
+    @foreach (var item in Model.EstadosAceptacion)
+    {
+        <td>
+            @Html.DisplayFor(modelItem => item)
+        </td>
+    }
+</tr>
+    </tbody>
+
+            <div>
+                @Html.ActionLink("Generar código", "Archivo", "ReadText")
+            </div>
